@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Connect4
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ playerTurn()
+comment3.params=colums\ rows
+comment3.target=void\ setUpBoard(java.util.List,\ int)
+comment4.params=
+comment4.target=void\ updateBoard()
+comment5.params=
+comment5.target=void\ updatePlayer()
+comment6.params=
+comment6.target=boolean\ checkForWin()
+numComments=7
