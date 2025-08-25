@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=GameToken
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameToken\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ setTokenType()
+comment2.params=tempWidth\ tempHeight
+comment2.target=void\ setTokenPosition(int,\ int)
+numComments=3
