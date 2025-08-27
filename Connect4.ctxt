@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Connect4
+comment1.params=
+comment1.target=Connect4()
+comment2.params=
+comment2.target=boolean\ PlayerTurn()
+comment3.params=
+comment3.target=void\ UpdateBoard()
+comment4.params=
+comment4.target=void\ UpdatePlayer()
+comment5.params=keyboard\ minInt\ maxInt
+comment5.target=int\ CheckForInt(java.util.Scanner,\ int,\ int)
+numComments=6

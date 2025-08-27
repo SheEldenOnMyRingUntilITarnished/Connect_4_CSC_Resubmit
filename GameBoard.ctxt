@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=GameBoard
+comment0.text=\r\n\ GameBoard\ Class\r\n\ Holds\ the\ game\ tokens\ aswell\ as\ contains\ all\ data\ relating\ to\ the\ board\r\n\ \r\n
+comment1.params=x\ y
+comment1.target=GameBoard.Piece\ getCell(int,\ int)
+comment2.params=x
+comment2.target=void\ placeNewPiece(int)
+comment3.params=columns\ rows
+comment3.target=GameBoard(int,\ int)
+comment4.params=
+comment4.target=int\ getRows()
+comment5.params=
+comment5.target=int\ getColumns()
+numComments=6
