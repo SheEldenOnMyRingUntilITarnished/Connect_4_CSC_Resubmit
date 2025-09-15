@@ -31,11 +31,11 @@ public class Connect4 {
         
         //Asks Player where they want to place there token
         System.out.print("Where do you want to place your token?");
-        x = CheckForInt(keyboard,0,6);
-        gameBoard.placeNewPiece(x);
+        x = CheckForInt(keyboard,1,7);
+        gameBoard.placeNewPiece(x-1, currentPlayer);
         System.out.println("TURN END");
         
-        return winManager.checkForWin(x, gameBoard.getColumns() - 1, currentPlayer);
+        return winManager.checkForWin(x-1, gameBoard.getColumns() - 1, currentPlayer);
     } 
     
     public void UpdateBoard()
@@ -66,6 +66,7 @@ public class Connect4 {
         {
             currentPlayer = currentPlayer.X;
         }
+        System.out.print("Player Changed to: " + currentPlayer);
     }
     
     public int CheckForInt(Scanner keyboard, int minInt, int maxInt)
@@ -83,7 +84,13 @@ public class Connect4 {
         catch(NumberFormatException e)
         {
             //Player Inputed invalid Value,, Time for the Inception
-            System.out.print("INVALID PLEASE INPUT A NUMBER !");
+            System.out.print("INVALID PLEASE INPUT A NUMBER!");
+            returnedInt = CheckForInt(keyboard, minInt, maxInt);
+        }
+        int coloumFill = gameBoard.getColumn(returnedInt - 1);
+        if(coloumFill >= gameBoard.getColumns())
+        {
+            System.out.print("INVALID PLEASE CHOOSE A UNFILLED COLOUM!");
             returnedInt = CheckForInt(keyboard, minInt, maxInt);
         }
         return returnedInt;

@@ -25,8 +25,8 @@ public class GameBoard
         }
     }
     
-    public void placeNewPiece(int x){
-        columns.get(x).add(Piece.X);
+    public void placeNewPiece(int x, GameBoard.Piece piece){
+        columns.get(x).add(piece);
     }
     
     private final List<List<Piece>> columns;
@@ -47,5 +47,10 @@ public class GameBoard
 
     public int getColumns() {
         return columns.size();
+    }
+    
+    public int getColumn(int x) {
+        List<Piece> tempList = columns.get(x);
+        return tempList.size();
     }
 }
