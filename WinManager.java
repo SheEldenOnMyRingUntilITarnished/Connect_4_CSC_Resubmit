@@ -2,7 +2,7 @@
 /**
  * Write a description of class WinManager here.
  *
- * @author (your name)
+ * @author (Zachary Quinn)
  * @version (a version number or a date)
  */
 public class WinManager
@@ -28,27 +28,36 @@ public class WinManager
         //Horizontal Line
         for(int i = 0; i < 4; i++)
         {
-            if (player == gameBoard.getCell(x, y+i))
+            if(x+i >= 0)
             {
-                currentlyInARow++;
+                if (player == gameBoard.getCell(x, y+i))
+                {
+                    currentlyInARow++;
+                }
             }
         }
         
         //Line going bottom left to top right
         for(int i = -4; i < 4; i++)
         {
-            if (player == gameBoard.getCell(x+i, y))
+            if(x+i >= 0)
             {
-                currentlyInARow++;
+                if (player == gameBoard.getCell(x+i, y-i))
+                {
+                    currentlyInARow++;
+                }
             }
         }
         
         //Line going top left to bottom right
-        for(int i = 0; i < 4; i++)
+        for(int i = -4; i < 4; i++)
         {
-            if (player == gameBoard.getCell(x+i, y))
+            if(x+i >= 0)
             {
-                currentlyInARow++;
+                if (player == gameBoard.getCell(x+i, y-i))
+                {
+                    currentlyInARow++;
+                }
             }
         }
         

@@ -13,12 +13,12 @@ public class Connect4 {
     {
         boolean playerHasWon = false;
         UpdateBoard();//Runs once to display board before first player turn
+        UpdatePlayer();
         while (!playerHasWon)
         {
             playerHasWon = PlayerTurn();
             UpdateBoard();
             UpdatePlayer();
-            //playerHasWon = true;
         }
     }
     
