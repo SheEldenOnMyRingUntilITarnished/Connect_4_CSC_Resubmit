@@ -9,6 +9,7 @@ public class Connect4 {
     
     public GameBoard.Piece currentPlayer;
     
+    //This Runs at the start of the game and runs the main gameplay loop
     public Connect4()
     {
         boolean playerHasWon = false;
@@ -29,15 +30,18 @@ public class Connect4 {
         Scanner keyboard = new Scanner(System.in);
         int x = -1;
         
+        System.out.println("Player: " + currentPlayer + "'s turn");
+        
         //Asks Player where they want to place there token
-        System.out.print("Where do you want to place your token?");
+        System.out.println("Where do you want to place your token?");
         x = CheckForInt(keyboard,1,7);
         gameBoard.placeNewPiece(x-1, currentPlayer);
-        System.out.println("TURN END");
+        //System.out.println("TURN END");
         
-        return winManager.checkForWin(x-1, gameBoard.getColumns() - 1, currentPlayer);
+        return winManager.checkForWin(x-1, gameBoard.getColumn(x-1) - 1, currentPlayer);
     } 
     
+    //This runs after each players turn to update the display board to show the next player where the last players peice was played
     public void UpdateBoard()
     {
         for(int x = 0; x <= gameBoard.getRows(); x++)
@@ -57,6 +61,8 @@ public class Connect4 {
             System.out.println(" < [" + fixedInt + "]");
         }
     }
+    
+    //This runs at the end of a loop to change who the current player is to the next one
     public void UpdatePlayer()
     {
         if(currentPlayer == currentPlayer.X)
@@ -66,9 +72,11 @@ public class Connect4 {
         {
             currentPlayer = currentPlayer.X;
         }
-        System.out.print("Player Changed to: " + currentPlayer);
+        //System.out.print("Player Changed to: " + currentPlayer);
     }
     
+    //This Checks if the inputed int is a actual int and not some irrgular value and 
+    //if it is an int it will then out put it into the function.
     public int CheckForInt(Scanner keyboard, int minInt, int maxInt)
     {
         int returnedInt = -99;//irrational value for error checking
@@ -77,7 +85,7 @@ public class Connect4 {
             returnedInt = Integer.parseInt(keyboard.nextLine());
             if(returnedInt > maxInt ||returnedInt < minInt)
             {
-                System.out.print("INVALID PLEASE INPUT A NUMBER INBETWEEN " + maxInt + " AND " + minInt + "!");
+                System.out.print("INVALID PLEASE INPUT A NUMBER INBETWEEN " + minInt + " AND " + maxInt + "!");
                 returnedInt = CheckForInt(keyboard, minInt, maxInt);
             }
         }
