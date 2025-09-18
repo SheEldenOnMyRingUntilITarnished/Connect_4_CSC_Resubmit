@@ -9,6 +9,8 @@ public class WinManager
 {
     public GameBoard gameBoard = GlobalData.currentGameBoard();
     
+    //Checks for wins in each angle by grabing the x and y pos 
+    //of the token placed and -4 and +4 each side to find all possible wins
     public boolean checkForWin(int x, int y, GameBoard.Piece player) {
         int currentlyInARow = 0;
         boolean playerHasWon = false;

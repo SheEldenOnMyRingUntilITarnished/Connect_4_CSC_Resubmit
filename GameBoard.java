@@ -9,10 +9,13 @@ import java.util.ArrayList;
 **/
 public class GameBoard
 {
+    //The diffrent types of players/pieces
     public enum Piece {
         X,
         O
     }
+    
+    //Allows the other scripts to acsess specific Cells
     public Piece getCell(int x, int y) {
         //assert(x >= 0 && x < getColumns()): "x: " + x;
         //assert(y >= 0 && y < getRows()): "y: " + y;
@@ -25,6 +28,7 @@ public class GameBoard
         }
     }
     
+    //Adds a new piece to the board
     public void placeNewPiece(int x, GameBoard.Piece piece){
         columns.get(x).add(piece);
     }
@@ -32,6 +36,7 @@ public class GameBoard
     private final List<List<Piece>> columns;
     private final int rows;
     
+    //Instaniates a Game Board
     public GameBoard(int columns, int rows) {
         this.rows = rows;
         this.columns = new ArrayList<>();
@@ -41,14 +46,17 @@ public class GameBoard
         }
     }
     
+    //Returns the amount of rows
     public int getRows() {
         return rows;
     }
-
+    
+    //returns the amount of total columns
     public int getColumns() {
         return columns.size();
     }
     
+    //returns a specific Column
     public int getColumn(int x) {
         List<Piece> tempList = columns.get(x);
         return tempList.size();
