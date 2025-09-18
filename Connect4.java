@@ -13,11 +13,16 @@ public class Connect4 {
     public Connect4()
     {
         boolean playerHasWon = false;
+        System.out.println("Welcome to Sideways Connect 4!!!");
+        System.out.println("Remember Pieces go from right to left!!!!");
+        System.out.println("Lets Begin!!!");
         UpdateBoard();//Runs once to display board before first player turn
         UpdatePlayer();
         while (!playerHasWon)
         {
             playerHasWon = PlayerTurn();
+            ClearOutput();
+            System.out.println("Remember Pieces go from right to left!!!!");
             UpdateBoard();
             UpdatePlayer();
         }
@@ -73,6 +78,12 @@ public class Connect4 {
             currentPlayer = currentPlayer.X;
         }
         //System.out.print("Player Changed to: " + currentPlayer);
+    }
+    
+    //Clears the Screen
+    public void ClearOutput()
+    {
+        System.out.print('\u000c');
     }
     
     //This Checks if the inputed int is a actual int and not some irrgular value and 

@@ -14,16 +14,16 @@ public class WinManager
         boolean playerHasWon = false;
         
         //Vertical Line
-        System.out.println("Vertical Line");
+        //System.out.println("Vertical Line");
         for(int i = -4; i < 4; i++)
         {
-            System.out.println("Cell: " + (x+i) + "/" + y + "!");
+            //System.out.println("Cell: " + (x+i) + "/" + y + "!");
             if(x+i >= 0 && x+i <= gameBoard.getRows())
             {
                 if (player == gameBoard.getCell(x+i, y))
                 {
                     currentlyInARow++;
-                    System.out.println("In a row: " + currentlyInARow);
+                    //System.out.println("In a row: " + currentlyInARow);
                     if(currentlyInARow >= 4)
                     {
                         System.out.println("Player: " + player + " Has won");
@@ -39,7 +39,7 @@ public class WinManager
         currentlyInARow = 0;
         
         //Horizontal Line
-        System.out.println("Horizontal Line");
+        //System.out.println("Horizontal Line");
         for(int i = -4; i < 4; i++)
         {
             //System.out.println("Cell: " + x + "/" + (y+i) + "!");
@@ -64,7 +64,7 @@ public class WinManager
         currentlyInARow = 0;
         
         //Line going bottom left to top right
-        System.out.println("Top right to Bottom Left (" + gameBoard.getRows() + ")");
+        //System.out.println("Top right to Bottom Left (" + gameBoard.getRows() + ")");
         
         for(int i = -4; i < 4; i++)
         {
@@ -94,7 +94,7 @@ public class WinManager
         currentlyInARow = 0;
         
         //Line going top left to bottom right
-        System.out.println("Top left to bottom right");
+        //System.out.println("Top left to bottom right");
         for(int i = -4; i < 4; i++)
         {
             //System.out.println("Cell: " + (x+i) + "/" + (y+i) + "!");
